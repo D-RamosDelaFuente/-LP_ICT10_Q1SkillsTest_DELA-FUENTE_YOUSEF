@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Receipt Generator</title>
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+  <style>
+    body { font-family: Georgia, serif; margin: 24px; }
+    label { display: block; margin: 2px 0; }
+    button { margin-top: 6px; }
+    input, select { margin: 2px 0; }
+  </style>
+</head>
+<body>
+  <h1>OBMC Entrep Fair Group 1 - Coffee Shop</h1>
+
+  <h3>Menu:</h3>
+  <!-- value = price in pesos -->
+  <label><input type="checkbox" id="item1" value="120"> Americano (₱120)</label>
+  <label><input type="checkbox" id="item2" value="150"> Spanish Latte (₱150)</label>
+  <label><input type="checkbox" id="item3" value="188"> Cold Brew Malt (₱188)</label>
+  <label><input type="checkbox" id="item4" value="160"> Affogato (₱160)</label>
+  <label><input type="checkbox" id="item5" value="170"> Caramel Macchiato (₱170)</label>
+  <button py-click="create_order">Create Order</button>
+
+  <div id="show"></div>
+
+  <hr>
+  <h3>SKU Generator</h3>
+  <input type="text" id="category" placeholder="Category">
+  <input type="text" id="product_name" placeholder="Product name">
+  <input type="number" id="quantity" placeholder="Quantity">
+  <button py-click="SKU_generator">Generate SKU</button>
+  <div id="sku_output"></div>
+
+  <script type="py" src="./main.py"></script>
+</body>
+</html>
